@@ -24,7 +24,7 @@
      *
      */
     angular
-      .module('boilerplate')
+      .module('uhack')
       .factory('LocalStorage', [
         '$window', '$rootScope', LocalStorageService
       ]);

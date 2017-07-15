@@ -12,7 +12,7 @@
    *
    */
   angular
-    .module('boilerplate')
+    .module('uhack')
     .directive('mainNav', tinMainNav);
 
   function tinMainNav() {

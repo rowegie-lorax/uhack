@@ -34,7 +34,7 @@
 
 
   angular
-    .module('boilerplate')
+    .module('uhack')
     .factory('QueryService', [
       '$http', '$q', 'CONSTANTS', QueryService
     ]);

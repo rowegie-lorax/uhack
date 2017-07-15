@@ -1,17 +1,10 @@
-/**
- * Main application controller
- *
- * You can use this controller for your whole app if it is small
- * or you can have separate controllers for each logical section
- * 
- */
 ;(function() {
 
   angular
-    .module('boilerplate')
+    .module('uhack')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['LocalStorage', 'QueryService'];
+  MainController.$inject = ['LocalStorage', 'QueryService', 'PostController'];
 
 
   function MainController(LocalStorage, QueryService) {
@@ -19,7 +12,14 @@
     // 'controller as' syntax
     var self = this;
 
+    self.post();
 
+
+
+    self.post = function(){
+      var post = PostController.getPost();
+      console.log(post);
+    }
     ////////////  function definitions
 
 

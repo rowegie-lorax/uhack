@@ -12,7 +12,7 @@
    * Example in main-nav.html file
    * 
    */
-  angular.module('boilerplate')
+  angular.module('uhack')
     .directive('responsiveNav', responsiveNav);
 
 

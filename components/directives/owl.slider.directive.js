@@ -26,7 +26,7 @@
    * 
    */
   angular
-    .module('boilerplate')
+    .module('uhack')
     .directive('myslider', slider);
 
   function slider() {

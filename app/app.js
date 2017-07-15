@@ -23,8 +23,8 @@
         controller: 'ProfileController'
       })
       .when('/setup', {
-        templateUrl: 'views/setup.html'
-        // controller: 'MainController'
+        templateUrl: 'views/setup.html',
+        controller: 'StoreController'
       })
       .otherwise({
         redirectTo: '/'
@@ -60,10 +60,6 @@
     };
   }
 
-
-  /**
-   * Run block
-   */
   angular
     .module('uhack')
     .run(run);

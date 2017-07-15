@@ -5,40 +5,33 @@
     .module('uhack')
     .factory('getDataFromAPI', getDataFromAPI);
 
-  getDataFromAPI.$inject = ['$http', 'LocalStorage'];
+  getDataFromAPI.$inject = ['$http', 'LocalStorage', 'CONSTANTS'];
 
 
-  function getDataFromAPI($http, LocalStorage) {
+  function getDataFromAPI($http, LocalStorage, CONSTANTS) {
 
     return {
-      loadData: loadData
+      get: get
     };
 
 
-    ////////////  function definitions
+    function get(method, url){
+      var request = {
+        accept: 'application/json',
+        'x-ibm-client-secret': 'T1rS4fS0sI5nN4yY0qL8dB4gW6eT6gT7xG5wS5wH3nF4fE0bG7',
+        'x-ibm-client-id': '0c45af38-3f3f-499e-94a2-c14a32728bdf'
 
-
-    /**
-     * Load articles from GetPocket API
-     * @return {Object} Articles object
-     */
-    // var request = {
-    //   consumer_key: 'xxxx',
-    //   access_token: 'xxxx',
-    //   sort: 'newest',
-    //   count: 5
-    // };
-
-    // return $http({
-    //   method: 'GET',
-    //   url: API.url + 'v3/get',
-    //   params: request
-    // }).then(function(articles) {
-    //   return articles.data;
-    // })
-    // .catch(function(error) {
-    //   return error;
-    // });
+      }
+      return $http({
+          method: 'GET',
+          url: CONSTANTS.API_URL + 'accounts/100219364651',
+          headers: request
+        }).then(function(account_info) {
+          return account_info.data
+        }).catch(function(error) {
+          return error;
+        });
+    }
   }
 
 

@@ -3,10 +3,12 @@
   angular
     .module('uhack')
     .controller('MainController', MainController)
+    .controller('StoreController', StoreController)
     .controller('ProfileController', ProfileController);
 
   MainController.$inject = ['LocalStorage', 'QueryService', '$scope'];
-  ProfileController.$inject = ['LocalStorage', 'QueryService', '$scope'];
+  ProfileController.$inject = ['LocalStorage', 'getDataFromAPI', '$scope'];
+  StoreController.$inject = ['LocalStorage', 'QueryService', '$scope'];
 
   function MainController(LocalStorage, QueryService, $scope) {
 
@@ -32,9 +34,13 @@
     };
   }
 
-  function ProfileController(LocalStorage, QueryService, $scope) {
+  function ProfileController(LocalStorage, getDataFromAPI, $scope) {
 
 
+    getDataFromAPI.get().then(function(data){
+      $scope.account_info  = data ;
+    });
+    
     $scope.logout = function(){
       var choice = confirm("Are you sure want to logout ?");
       if (choice){
@@ -42,6 +48,12 @@
         window.location.reload();
       }
     };
+  }
+
+  function StoreController(LocalStorage, QueryService, $scope) {
+
+
+    
   }
 
 

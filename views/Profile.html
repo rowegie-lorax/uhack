@@ -31,9 +31,17 @@
     <a href="#" class="thumbnail">
       <img src="/images/sample1.jpeg" alt="...">
     </a>
-      <label>Account Number:</label> dfdf </br>
-      <label>Account Name:</label> fdsf</br>
-      <label>Balance Amount;</label> 10000000000000</br>
+      <label>Account Number:</label> 
+        {{ account_info[0].account_no }} </br>
+      <label>Account Name:</label> 
+        {{ account_info[0].account_name }}</br>
+      <label>Available Balance:</label> 
+        {{ account_info[0].currency }} 
+        {{ account_info[0].avaiable_balance }}</br>
+      <label>Current Balance:</label> 
+        {{ account_info[0].currency }} 
+        {{ account_info[0].current_balance }}</br>
+      <label>Status:</label> {{ account_info[0].status }}</br>
       <label><button class="btn btn-success" ng-click="logout()">Logout</button></label> 
   </div>
   </div>

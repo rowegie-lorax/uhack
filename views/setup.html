@@ -20,27 +20,15 @@
             text-align: center;
       }
 </style>
-<div style="text-align:center;margin-top: 5%"><h1>STORE</h1></div>
+<!-- <div style="text-align:center;margin-top: 5%"><h1>STORE</h1></div> -->
 <div class="row">
-  <div class="col-xs-6 col-md-3" id="store">
-    <a href="#" class="thumbnail">
-      <img src="/images/sample1.jpeg" alt="...">
-    </a>
-      <label>TITLE</label></br>
-      <label>PRICE</label>
+  <div class="col-xs-6 col-md-3" id="store" ng-repeat="product in products.results | filter: lessThan('price')" >
+    <div ng-if="product.price*50.48 < currentBalance">
+      
+      <label>{{ product.currency_code }}  {{ product.price }} </label></br>
+      <label>{{ product.title }} </label></br>
+    </div>
+    </div>
   </div>
-  <div class="col-xs-6 col-md-3" id="store">
-    <a href="#" class="thumbnail">
-      <img src="/images/sample1.jpeg" alt="...">
-    </a>
-      <label>TITLE</label></br>
-      <label>PRICE</label>
-  </div>
-  <div class="col-xs-6 col-md-3" id="store">
-    <a href="#" class="thumbnail">
-      <img src="/images/sample1.jpeg" alt="...">
-    </a>
-      <label>TITLE</label></br>
-      <label>PRICE</label>
-  </div>
+ 
 </div>

@@ -8,7 +8,7 @@
 
   MainController.$inject = ['LocalStorage', 'QueryService', '$scope'];
   ProfileController.$inject = ['LocalStorage', 'getDataFromAPI', '$scope'];
-  StoreController.$inject = ['LocalStorage', 'QueryService', '$scope'];
+  StoreController.$inject = ['LocalStorage', 'getDataFromAPI', 'QueryService', '$scope'];
 
   function MainController(LocalStorage, QueryService, $scope) {
 
@@ -40,7 +40,7 @@
     getDataFromAPI.get().then(function(data){
       $scope.account_info  = data ;
     });
-    
+
     $scope.logout = function(){
       var choice = confirm("Are you sure want to logout ?");
       if (choice){
@@ -50,8 +50,25 @@
     };
   }
 
-  function StoreController(LocalStorage, QueryService, $scope) {
+  function StoreController(LocalStorage, getDataFromAPI, QueryService, $scope) {
 
+    getDataFromAPI.getBalance().then(function(balance){
+      $scope.currentBalance = balance;
+      console.log($scope.currentBalance);
+    });
+
+    QueryService.query().then(function(data){
+      // for (var i = data.length - 1; i >= 0; i--) {
+      //   consolelog(data[i])
+      // }
+      $scope.products = data;
+      console.log($scope.products.results);
+
+    });
+
+    $scope.lessThank = function(keyword){
+      return 
+    }
 
     
   }

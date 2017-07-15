@@ -10,7 +10,11 @@
 
   function config($routeProvider, $locationProvider, $httpProvider, $compileProvider) {
 
-    $locationProvider.html5Mode(false);
+    // $locationProvider.html5Mode(false);
+    $httpProvider.defaults.headers.common = {};
+    $httpProvider.defaults.headers.post = {};
+    $httpProvider.defaults.headers.put = {};
+    $httpProvider.defaults.headers.patch = {};
 
     // routes
     $routeProvider

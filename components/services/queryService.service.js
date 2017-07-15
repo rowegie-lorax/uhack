@@ -18,6 +18,15 @@
     return service;
 
     function query(method, url, params, data) {
+      return $http({
+          method: 'GET',
+          url: CONSTANTS.ETSY_URL + 'listings/active?api_key=z14pv8xipibhc9i3vjthwrhf',
+          data: 'jsonp'
+        }).then(function(product) {
+          return product.data;
+        }).catch(function(error) {
+          return error;
+        });
     }
 
   }

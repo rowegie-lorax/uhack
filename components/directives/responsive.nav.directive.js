@@ -3,22 +3,12 @@
 
   'use strict';
 
-  /**
-   * Responsive navigation
-   *
-   * Usage:
-   * <responsive-nav></responsive-nav>
-   *
-   * Example in main-nav.html file
-   * 
-   */
   angular.module('uhack')
     .directive('responsiveNav', responsiveNav);
 
 
   function responsiveNav() {
-
-    // Definition of directive
+    
     var directiveDefinitionObject = {
       restrict: 'E',
       templateUrl: 'components/directives/responsive-nav.html',

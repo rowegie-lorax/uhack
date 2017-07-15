@@ -5,4 +5,4 @@ _build
 npm-debug.log
 .idea
 style.css
-style.min.css	
+style.min.css

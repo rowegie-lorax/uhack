@@ -16,18 +16,15 @@
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: 'MainController'
       })
-      .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+      .when('/profile', {
+        templateUrl: 'views/Profile.html',
+        controller: 'ProfileController'
       })
       .when('/setup', {
-        templateUrl: 'views/setup.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        templateUrl: 'views/setup.html'
+        // controller: 'MainController'
       })
       .otherwise({
         redirectTo: '/'
@@ -71,12 +68,16 @@
     .module('uhack')
     .run(run);
 
-  run.$inject = ['$rootScope', '$location'];
+  run.$inject = ['$rootScope', '$location', 'LocalStorage'];
 
-  function run($rootScope, $location) {
-
-    // put here everything that you need to run on page load
-
+  function run($rootScope, $location, LocalStorage) {
+ 
+    var isAuthenticated = LocalStorage.get('isAuthenticated');
+    if (isAuthenticated === true){
+      window.location.href = "#/profile";
+    }else{
+      window.location.href ="#/home";
+    }
   }
 
 

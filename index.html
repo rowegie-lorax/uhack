@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="bower_components/OwlCarousel/owl-carousel/owl.carousel.css" />
 		<link rel="stylesheet" type="text/css" href="styles/style.css" />
 	</head>
-	<body class="main-wrapper">
+	<body class="main-wrapper" ng-controller="MainController">
 		<main-nav></main-nav>
 		<div data-ng-view="" class="container"></div>
 	</body>
@@ -25,7 +25,7 @@
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-	<script type="text/javascript" src="bower_components/bootstrap/dist/css/bootstrap.css"></script>
+	<link type="text/css" rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
 	<script type="text/javascript" src="app/app.js"></script>
 	<script type="text/javascript" src="app/config.js"></script>
 	<script type="text/javascript" src="components/services/LocalStorage.service.js"></script>

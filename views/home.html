@@ -1,0 +1,60 @@
+<style type="text/css">
+    .formContainer{
+        width: 100% ;
+        /*float: right;*/
+        /*background-image: url(/images/sample1.jpeg);*/
+        height: 500px;
+        padding: 50px;
+    }
+    .login{
+        margin-top: 65px;
+        float: right;
+        width:34%;
+        background-color: rgba(128, 123, 115, 0.65);
+        padding: 25px;
+        color: white;
+        padding-bottom: 35px;
+    }
+    video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+ /*background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;*/
+  background-size: cover;
+  transition: 1s opacity;
+} 
+.first,.second{
+float: left;
+width: 47%;
+text-align: center;
+background: rgba(128, 123, 115, 0.65);
+margin:10px; 
+}
+</style>
+<div  class="formContainer" >
+<video  id="bgvid" playsinline autoplay muted loop>
+    <source src="/images/sample.mp4" type="video/webm">
+    <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4">
+</video>
+    <div class="login">
+        <h3>LOGIN</h3>
+        <form ng-submit="login()">
+            <label>Username: </label>
+            <input class="form-control" type="text" ng-model="user.username">
+            <label>Password: </label>
+            <input type="password" class="form-control" ng-model="user.password">
+            {{ user.username }}
+            {{ user.password }}
+            {{ errors }}
+            <input type="submit" class="btn btn-success">
+            <pre ng-if="errors" style="color:red" > Incorrect username or password </pre>
+        </form>
+    </div>
+    
+</div>

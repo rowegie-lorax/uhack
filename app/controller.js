@@ -24,7 +24,7 @@
     $scope.login = function(){
       if($scope.user.username === 'uhack' && $scope.user.password === 'uhack123'){
         LocalStorage.update('isAuthenticated', true);
-        window.location.href = '#/profile';
+        window.location.reload();
       }else{
         $scope.errors = true;
       }
